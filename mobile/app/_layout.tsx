@@ -16,7 +16,18 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
+        <Stack.Screen
+          name="restaurant/[restaurantId]"
+          options={{ title: '음식점 상세', headerBackTitle: '뒤로' }}
+        />
+        <Stack.Screen
+          name="auth/sign-in"
+          options={{ title: '로그인', presentation: 'modal' }}
+        />
+        <Stack.Screen
+          name="auth/sign-up"
+          options={{ title: '회원가입', presentation: 'modal' }}
+        />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
